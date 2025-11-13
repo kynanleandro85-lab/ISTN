@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NexaSolusi - Inovasi untuk Masa Depan Anda. Solusi IT untuk startup dan UKM. Konsultasi, pengembangan aplikasi, dan layanan IT." />
+  <title>NexaSolusi - Inovasi untuk Masa Depan Anda</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #F5F5F5;
+      color: #1B3A57;
+      line-height: 1.6;
+    }
+    a {
+      color: #F7941D;
+      text-decoration: none;
+    }
+    header, footer {
+      background-color: #1B3A57;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav a {
+      font-weight: 600;
+      color: white;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      background-color: white;
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(27,58,87,0.85), rgba(27,58,87,0.85)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-cta {
+      background-color: #F7941D;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      color: white;
+    }
+    .btn-cta:hover {
+      background-color: #d87a00;
+    }
+    /* 3 Poin Unggulan */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .feature-item {
+      flex: 1 1 250px;
+      background-color: #F7941D;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .feature-item h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    /* Section Titles */
+    h2.section-title {
+      border-bottom: 3px solid #F7941D;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    /* Tentang Kami */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+    }
+    .values-list {
+      list-style: disc inside;
+      padding-left: 0;
+      margin-bottom: 1rem;
+    }
+    .team {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .team-member {
+      text-align: center;
+      max-width: 180px;
+    }
+    .team-member img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    /* Layanan/Produk */
+    .services-list {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .service-item {
+      background: #F7941D;
+      color: white;
+      flex: 1 1 300px;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .service-item h3 {
+      margin-top: 0;
+    }
+    /* Portofolio */
+    .portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .portfolio-item {
+      flex: 1 1 300px;
+      background-color: #E9F1F7;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .portfolio-item h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #1B3A57;
+    }
+    .portfolio-challenge {
+      font-weight: 600;
+      color: #F7941D;
+    }
+    /* Contact */
+    .contact-section {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-form {
+      flex: 1 1 350px;
+      background-color: #F9FAFB;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+      color: #1B3A57;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .contact-form button {
+      background-color: #1B3A57;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #16324a;
+    }
+    .contact-info {
+      flex: 1 1 300px;
+      font-size: 0.95rem;
+      color: #1B3A57;
+    }
+    /* Google Maps iframe */
+    iframe {
+      border: 0;
+      width: 100%;
+      height: 250px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    /* Testimoni */
+    .testimonials {
+      margin-bottom: 3rem;
+    }
+    .testimonial-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .testimonial-item {
+      background: #F7941D;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 320px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+      font-style: italic;
+    }
+    .testimonial-item::before {
+      content: "“";
+      font-size: 3rem;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      opacity: 0.2;
+    }
+    .testimonial-author {
+      margin-top: 1rem;
+      font-weight: 700;
+      font-style: normal;
+      text-align: right;
+    }
+    /* Partner logos */
+    .partners {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .partner-logo {
+      max-height: 50px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+    .partner-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+    /* Blog Article */
+    .blog-article {
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 3rem;
+    }
+    .blog-article img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .blog-article h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .blog-meta {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    /* FAQ */
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 3rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      cursor: pointer;
+      color: #F7941D;
+    }
+    .faq-answer {
+      margin-top: 0.25rem;
+      padding-left: 1rem;
+      display: none;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      .features {
+        flex-direction: column;
+      }
+      .services-list {
+        flex-direction: column;
+      }
+      .portfolio-list {
+        flex-direction: column;
+      }
+      .contact-section {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Primary Navigation">
+    <ul>
+      <li><a href="#home" aria-current="page">Beranda</a></li>
+      <li><a href="#about">Tentang Kami</a></li>
+      <li><a href="#services">Layanan</a></li>
+      <li><a href="#portfolio">Portofolio</a></li>
+      <li><a href="#contact">Hubungi Kami</a></li>
+      <li><a href="#blog">Berita</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" role="banner" aria-label="Hero section">
+    <h1>Transformasi Digital Dimulai di Sini</h1>
+    <p>Solusi IT yang Disesuaikan dengan Kebutuhan Bisnis Anda</p>
+    <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hubungi Kami Sekarang</button>
+  </section>
+
+  <!-- 3 Poin Unggulan -->
+  <section aria-labelledby="features-title" class="features" role="region">
+    <h2 id="features-title" class="section-title">Keunggulan Kami</h2>
+    <article class="feature-item" tabindex="0">
+      <h3>Inovasi Berkelanjutan</h3>
+      <p>Kami selalu menghadirkan teknologi terbaru untuk klien kami.</p>
+    </article>
+    <article class="feature-item" tabindex="0">
+      <h3>Dukungan 24/7</h3>
+      <p>Tim kami siap membantu kapan saja Anda membutuhkan.</p>
+    </article>
+    <article class="feature-item" tabindex="0">
+      <h3>Tim Ahli Bersertifikat</h3>
+      <p>Profesional berpengalaman yang mengerti kebutuhan bisnis Anda.</p>
+    </article>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="about" aria-labelledby="about-title" style="margin-bottom:3rem;">
+    <h2 id="about-title" class="section-title">Tentang Kami</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p><strong>Visi:</strong> Menjadi mitra terpercaya dalam transformasi digital.</p>
+        <p><strong>Misi:</strong></p>
+        <ul class="values-list">
+          <li>Memberikan solusi inovatif untuk klien.</li>
+          <li>Menjamin kepuasan pelanggan secara konsisten.</li>
+          <li>Membangun ekosistem teknologi berkelanjutan.</li>
+        </ul>
+        <p><strong>Nilai Inti:</strong> Integritas, Inovasi, Kolaborasi</p>
+      </div>
+      <div class="team" aria-label="Tim NexaSolusi">
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto Budi Santoso, CEO" />
+          <h4>Budi Santoso</h4>
+          <p>CEO & Co-Founder</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Sari Wijaya, CTO" />
+          <h4>Sari Wijaya</h4>
+          <p>CTO & Co-Founder</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Foto Andi Pratama, Head of Marketing" />
+          <h4>Andi Pratama</h4>
+          <p>Head of Marketing</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan/Produk -->
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title" class="section-title">Layanan Kami</h2>
+    <div class="services-list">
+      <article class="service-item" tabindex="0">
+        <h3>Konsultasi Digital Transformation</h3>
+        <p><strong>Deskripsi:</strong> Analisis kebutuhan bisnis dan roadmap digital.</p>
+        <p><strong>Manfaat:</strong> Optimasi proses bisnis dan efisiensi biaya.</p>
+      </article>
+      <article class="service-item" tabindex="0">
+        <h3>Pengembangan Aplikasi Kustom</h3>
+        <p><strong>Deskripsi:</strong> Pembuatan aplikasi sesuai kebutuhan bisnis.</p>
+        <p><strong>Manfaat:</strong> Solusi fleksibel dan scalable.</p>
+      </article>
+      <article class="service-item" tabindex="0">
+        <h3>Managed IT Services</h3>
+        <p><strong>Deskripsi:</strong> Monitoring dan pengelolaan infrastruktur IT.</p>
+        <p><strong>Manfaat:</strong> Fokus pada bisnis utama tanpa repot IT.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Portofolio -->
+  <section id="portfolio" aria-labelledby="portfolio-title">
+    <h2 id="portfolio-title" class="section-title">Portofolio Proyek</h2>
+    <div class="portfolio-list">
+      <article class="portfolio-item" tabindex="0">
+        <h4>Proyek Smart Retail</h4>
+        <p><span class="portfolio-challenge">Tantangan:</span> Integrasi sistem lama dengan teknologi baru.</p>
+        <p><span class="portfolio-challenge">Solusi:</span> Platform omnichannel.</p>
+        <p><span class="portfolio-challenge">Hasil:</span> Peningkatan penjualan 30%.</p>
+      </article>
+      <article class="portfolio-item" tabindex="0">
+        <h4>Proyek EduTech App</h4>
+        <p><span class="portfolio-challenge">Tantangan:</span> Penyediaan e-learning mudah diakses.</p>
+        <p><span class="portfolio-challenge">Solusi:</span> Aplikasi mobile interaktif.</p>
+        <p><span class="portfolio-challenge">Hasil:</span> 50.000+ pengguna aktif.</p>
+      </article>
+      <article class="portfolio-item" tabindex="0">
+        <h4>Proyek Infrastruktur Cloud</h4>
+        <p><span class="portfolio-challenge">Tantangan:</span> Migrasi data besar tanpa downtime.</p>
+        <p><span class="portfolio-challenge">Solusi:</span> Cloud hybrid custom.</p>
+        <p><span class="portfolio-challenge">Hasil:</span> 99.9% uptime.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Hubungi Kami -->
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Hubungi Kami</h2>
+    <div class="contact-section">
+      <form class="contact-form" novalidate aria-label="Formulir Kontak NexaSolusi" onsubmit="return submitForm(event)">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" required placeholder="Nama Anda" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="email@domain.com" />
+
+        <label for="phone">Nomor Telepon</label>
+        <input type="tel" id="phone" name="phone" pattern="^\+?\d{7,15}$" placeholder="+628123456789" />
+
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" required placeholder="Tulis pesan Anda..."></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+        <p id="form-message" role="alert" aria-live="polite" style="margin-top:0.5rem;"></p>
+      </form>
+
+      <div class="contact-info" aria-label="Informasi Kontak NexaSolusi">
+        <h3>Alamat Kami</h3>
+        <p>Jl. Inovasi No. 88</p>
+        <p>Kawasan Teknologi, Jakarta 12345</p>
+        <p>Indonesia</p>
+        <h3>Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.5728773158256!2d106.79787826078546!3d-6.2279678969821675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f0d6921fa42d%3A0x6d1a10f25c3b3b3a!2sJl.%20Inovasi%2088%2C%20Jakarta!5e0!3m2!1sid!2sid!4v1699632000000!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Peta Lokasi NexaSolusi"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni & Partner -->
+  <section aria-labelledby="testimonial-title" class="

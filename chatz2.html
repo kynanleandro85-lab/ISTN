@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya Digital Nusantara - Membangun Masa Depan Digital Indonesia</title>
+    <meta name="description" content="Karya Digital Nusantara adalah mitra tepercaya untuk startup dan SME dalam melakukan transformasi digital. Kami menyediakan solusi web, aplikasi mobile, dan konsultasi IT karya anak bangsa.">
+    
+    <!-- Google Fonts (Opsional, untuk font yang lebih baik) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Variables & Global Styles --- */
+        :root {
+            --primary-color: #0A2463;
+            --secondary-color: #3E92CC;
+            --accent-color: #F18F01;
+            --text-color: #333333;
+            --bg-color: #F5F5F5;
+            --white-color: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        p { margin-bottom: 1rem; }
+        
+        section {
+            padding: 80px 0;
+        }
+
+        /* --- Button Styles --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--white-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #e07f01;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(241, 143, 1, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white-color);
+            border: 2px solid var(--white-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* --- Hero Section --- */
+        #beranda {
+            background: linear-gradient(rgba(10, 36, 99, 0.7), rgba(10, 36, 99, 0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white-color);
+            padding-top: 80px; /* Offset for fixed header */
+        }
+
+        .hero-content h1 {
+            color: var(--white-color);
+            font-size: 3.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 1rem auto 2rem auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* --- Key Points Section --- */
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .key-point .icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* --- About Section --- */
+        #tentang-kami {
+            background-color: var(--bg-color);
+        }
+        
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .vm-grid > div {
+            background: var(--white-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            text-align: center;
+        }
+
+        .value-card .icon {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background: var(--white-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .service-card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Portfolio Section --- */
+        #portofolio {
+            background-color: var(--bg-color);
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-item-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-item-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Modal --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--white-color);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            animation: modalFadeIn 0.5s;
+        }
+
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: var(--text-color);
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-body h3 { font-size: 1.8rem; }
+        .modal-body h4 { font-size: 1.2rem; color: var(--secondary-color); margin-top: 1.5rem; }
+        .modal-body p { margin-bottom: 1.5rem; }
+
+
+        /* --- Testimonials Section --- */
+        .testimonials-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .testimonial-author-info h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .testimonial-author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- Blog Section --- */
+        #blog {
+            background-color: var(--bg-color);
+        }
+        .blog-article {
+            background: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .blog-article img {
+            width: 300px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-color);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: #e8e8e8;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+
+        .faq-answer p {
+            padding: 1rem 0;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Adjust as needed */
+            transition: max-height 0.5s ease-in;
+        }
+
+        /* --- Contact Section --- */
+        #hubungi-kami {
+            background-color: var(--bg-color);
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-info-item .icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            margin-top: 2rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-content h3 {
+            color: var(--white-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-content ul {
+            list-style: none;
+        }
+
+        .footer-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-content a {
+            color: var(--white-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-content a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .vm-grid,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-article {
+                flex-direction: column;
+            }
+
+            .blog-article img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#beranda" class="logo">Karya Digital Nusantara</a>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang-kami">Tentang Kami</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#hubungi-kami" class="btn btn-primary">Hubungi Kami</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Beranda (Hero Section) -->
+        <section id="beranda">
+            <div class="container hero-content">
+                <h1>Solusi Digital untuk Pertumbuhan Bisnis Anda</h1>
+                <p>Kami wujudkan ide Anda menjadi kenyataan dengan teknologi yang inovatif dan strategis.</p>
+                <div class="hero-buttons">
+                    <a href="#hubungi-kami" class="btn btn-primary">Konsultasi Gratis</a>
+                    <a href="#portofolio" class="btn btn-secondary">Lihat Portofolio</a>
+                </div>
+                <div class="key-points">
+                    <div class="key-point">
+                        <div class="icon">👥</div>
+                        <h3>Tim Ahli Berpengalaman</h3>
+                        <p>Didukung oleh profesional terbaik bangsa yang berdedikasi di bidang teknologi dan bisnis.</p>
+                    </div>
+                    <div class="key-point">
+                        <div class="icon">📊</div>
+                        <h3>Solusi Terukur</h3>
+                        <p>Setiap solusi kami dirancang untuk memberikan dampak bisnis yang nyata dan terukur.</p>
+                    </div>
+                    <div class="key-point">
+                        <div class="icon">🚀</div>
+                        <h3>Dukungan Penuh</h3>
+                        <p>Kami tidak hanya membangun, tapi juga mendukung pertumbuhan produk Anda jangka panjang.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Kami -->
+        <section id="tentang-kami" class="container">
+            <h2>Tentang Karya Digital Nusantara</h2>
+            <p style="text-align:center; max-width:800px; margin: 0 auto;">Karya Digital Nusantara adalah perusahaan teknologi asli Indonesia yang berfokus pada penyediaan solusi digital kustom untuk membantu startup dan usaha menengah (SME) dalam melakukan transformasi digital. Kami menggabungkan keahlian teknis, pemahaman bisnis yang mendalam, dan pendekatan yang berpusat pada klien.</p>
+            
+            <div class="vm-grid">
+                <div>
+                    <h3>Visi Kami</h3>
+                    <p>Menjadi mitra transformasi digital terdepan di Indonesia yang memberdayakan bisnis untuk mencapai potensi penuh mereka melalui inovasi teknologi karya anak bangsa.</p>
+                </div>
+                <div>
+                    <h3>Misi Kami</h3>
+                    <p>Menghadirkan solusi digital yang berkualitas, skalabel, dan berdampak tinggi untuk memajukan ekosistem bisnis di Nusantara dengan membangun kemitraan jangka panjang yang saling menguntungkan.</p>
+                </div>
+            </div>
+
+            <h3 style="text-align:center; margin-top: 3rem;">Nilai Inti Kami</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon">💡</div>
+                    <h4>Inovasi</h4>
+                    <p>Selalu mencari cara baru dan lebih baik untuk menyelesaikan masalah.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🤝</div>
+                    <h4>Integritas</h4>
+                    <p>Komitmen pada kejujuran, transparansi, dan etika dalam setiap tindakan.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🎯</div>
+                    <h4>Kepuasan Klien</h4>
+                    <p>Keberhasilan klien adalah keberhasilan kami.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🌱</div>
+                    <h4>Pertumbuhan</h4>
+                    <p>Berkembang bersama klien dan tim kami secara berkelanjutan.</p>
+                </div>
+            </div>
+
+            <h3 style="text-align:center; margin-top: 3rem;">Bertemu dengan Tim Kami</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/3E92CC/FFFFFF?text=RW" alt="Rani Wijaya">
+                    <h4>Rani Wijaya</h4>
+                    <p>Chief Executive Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/3E92CC/FFFFFF?text=FS" alt="Fajar Santoso">
+                    <h4>Fajar Santoso</h4>
+                    <p>Chief Technology Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/3E92CC/FFFFFF?text=DL" alt="Dewi Lestari">
+                    <h4>Dewi Lestari</h4>
+                    <p>Head of Product Design</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/3E92CC/FFFFFF?text=HK" alt="Hendra Kusuma">
+                    <h4>Hendra Kusuma</h4>
+                    <p>Lead Software Engineer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan -->
+        <section id="layanan" class="container">
+            <h2>Layanan Kami</h2>
+            <p style="text-align:center; max-width:800px; margin: 0 auto;">Solusi komprehensif untuk setiap kebutuhan digital Anda, dirancang dengan presisi dan passion.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🌐</div>
+                    <h3>Pengembangan Web Kustom</h3>
+                    <p>Membangun website yang tidak hanya menarik secara visual, tetapi juga cepat, aman, dan dioptimalkan untuk konversi.</p>
+                    <ul>
+                        <li>Website Profil Perusahaan</li>
+                        <li>Aplikasi Web Berbasis SaaS</li>
+                        <li>E-Commerce Platform</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📱</div>
+                    <h3>Pengembangan Aplikasi Mobile</h3>
+                    <p>Mengubah ide Anda menjadi aplikasi mobile iOS dan Android yang intuitif, responsif, dan disukai pengguna.</p>
+                    <ul>
+                        <li>Aplikasi Native (iOS & Android)</li>
+                        <li>Aplikasi Hybrid (Cross-Platform)</li>
+                        <li>Integrasi API & Backend</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🤖</div>
+                    <h3>Konsultasi & Strategi IT</h3>
+                    <p>Membantu perusahaan Anda merumuskan road map transformasi digital yang selaras dengan tujuan bisnis.</p>
+                    <ul>
+                        <li>Audit Sistem & Infrastruktur</li>
+                        <li>Perencanaan Arsitektur Sistem</li>
+                        <li>Pelatihan & Workshop Digital</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portofolio -->
+        <section id="portofolio" class="container">
+            <h2>Portofolio Kami</h2>
+            <p style="text-align:center; max-width:800px; margin: 0 auto;">Hasil karya kami yang membawa kesuksesan dan pertumbuhan bagi klien.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/400x200/0A2463/FFFFFF?text=E-Commerce" alt="Proyek E-Commerce">
+                    <div class="portfolio-item-content">
+                        <h3>Platform E-Commerce 'MajuMaju'</h3>
+                        <p>Kategori: E-Commerce</p>
+                        <button class="btn btn-primary" onclick="openModal('MajuMaju', 'Membangun toko online dari nol untuk brand fesyen lokal.', 'Mengembangkan front-end yang menarik, sistem manajemen produk, integrasi payment gateway, dan dashboard analitik penjualan.', 'Meningkatkan penjualan online hingga 250% dalam 6 bulan pertama dan memperluas jangkauan pasar ke seluruh Indonesia.')">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/400x200/0A2463/FFFFFF?text=Logistik" alt="Proyek Logistik">
+                    <div class="portfolio-item-content">
+                        <h3>Aplikasi Logistik 'AnterinAja'</h3>
+                        <p>Kategori: Logistik</p>
+                        <button class="btn btn-primary" onclick="openModal('AnterinAja', 'Klien kesulitan mengelola armada dan tracking pengiriman secara real-time.', 'Membuat aplikasi mobile untuk driver dan dashboard web untuk admin, dilengkapi dengan GPS tracking, fitur optimasi rute, dan sistem pembayaran digital.', 'Mengurangi biaya operasional pengiriman hingga 20% dan meningkatkan kepuasan pelanggan karena transparansi pengiriman.')">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/400x200/0A2463/FFFFFF?text=Edukasi" alt="Proyek Edukasi">
+                    <div class="portfolio-item-content">
+                        <h3>Platform Edukasi 'PintarKu'</h3>
+                        <p>Kategori: Edukasi</p>
+                        <button class="btn btn-primary" onclick="openModal('PintarKu', 'Lembaga bimbingan belajar membutuhkan platform untuk mengelola kelas dan siswa secara online.', 'Mengembangkan Learning Management System (LMS) dengan fitur video streaming, kuis interaktif, forum diskusi, dan laporan progres siswa untuk orang tua.', 'Meningkatkan jumlah siswa aktif hingga 400% dan berhasil melakukan transisi dari offline ke online learning dengan mulus.')">Lihat Detail</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimoni -->
+        <section id="testimoni" class="container">
+            <h2>Apa Kata Klien Kami</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p>"Tim Karya Digital Nusantara luar biasa! Mereka berhasil mengubah visi kami menjadi sebuah platform e-commerce yang powerful dan user-friendly. Sangat profesional dan responsif. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/50x50/F18F01/FFFFFF?text=SR" alt="Sarah R">
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Rizki</h4>
+                            <p>Founder, MajuMaju</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Aplikasi logistik yang dibuat oleh Karya Digital sangat membantu operasional kami sehari-hari. Fitur tracking real-time-nya mengubah cara kami berbisnis. Investasi terbaik yang pernah kami buat."</p>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/50x50/F18F01/FFFFFF?text=HP" alt="Hendra P">
+                        <div class="testimonial-author-info">
+                            <h4>Hendra Pratama</h4>
+                            <p>Operations Manager, AnterinAja</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Berkat LMS dari Karya Digital Nusantara, kami bisa menjangkau lebih banyak murah di seluruh Indonesia. Mereka tidak hanya memberikan produk, tapi juga solusi dan pelatihan yang lengkap."</p>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/50x50/F18F01/FFFFFF?text=DL" alt="Diana L">
+                        <div class="testimonial-author-info">
+                            <h4>Diana Listyawati</h4>
+                            <p>CEO, PintarKu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog -->
+        <section id="blog" class="container">
+            <h2>Berita & Insight</h2>
+            <div class="blog-article">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop" alt="AI Trend">
+                <div class="blog-content">
+                    <div class="blog-meta">12 Maret 2024 | Oleh Tim Karya Digital Nusantara</div>
+                    <h3>5 Tren Teknologi AI yang Akan Mendominasi 2024</h3>
+                    <p>Teknologi Artificial Intelligence (AI) terus berkembang dengan pesat, dan tahun 2024 diprediksi akan menjadi tahun puncak bagi beberapa tren AI yang akan mengubah lanskap bisnis dan teknologi. Dari Generative AI yang lebih canggih hingga penerapan AI di sektor kesehatan, artikel ini mengupas tuntas apa saja yang perlu Anda perhatikan...</p>
+                    <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Berapa lama waktu yang dibutuhkan untuk menyelesaikan sebuah proyek?</button>
+                    <div class="faq-answer">
+                        <p>Waktu pengerjaan bervariasi tergantung pada kompleksitas proyek. Untuk aplikasi web sederhana, estimasinya adalah 2-3 bulan. Kami akan memberikan timeline detail setelah tahap perencanaan bersama Anda.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Berapa kisaran biaya untuk layanan Karya Digital Nusantara?</button>
+                    <div class="faq-answer">
+                        <p>Biaya disesuaikan dengan kebutuhan dan lingkup proyek. Kami menawarkan fleksibilitas, mulai dari proyek-based hingga model retainer untuk dukungan jangka panjang. Hubungi kami untuk konsultasi dan penawaran gratis.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Apakah Karya Digital menyediakan layanan maintenance setelah proyek selesai?</button>
+                    <div class="faq-answer">
+                        <p>Tentu, kami menyediakan paket maintenance dan support untuk memastikan aplikasi atau website Anda tetap berjalan optimal, aman, dan up-to-date dengan teknologi terbaru.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Bagaimana proses kerja sama dengan Karya Digital Nusantara?</button>
+                    <div class="faq-answer">
+                        <p>Proses kami dimulai dari tahap diskusi dan discovery untuk memahami kebutuhan Anda. Kemudian, kami akan membuat proposal dan perencanaan detail. Setelah disepakati, kami masuk ke tahap desain, pengembangan, testing, hingga peluncuran dan pasca-luncur.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Apakah kepemilikan kode dan aset digital akan diserahkan kepada klien?</button>
+                    <div class="faq-answer">
+                        <p>Ya, setelah seluruh pembayaran selesai, kepemilikan penuh atas kode sumber, desain, dan aset digital lainnya yang dibuat khusus untuk proyek Anda akan sepenuhnya menjadi milik klien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hubungi Kami -->
+        <section id="hubungi-kami" class="container">
+            <h2>Hubungi Kami</h2>
+            <p style="text-align:center; max-width:800px; margin: 0 auto;">Kami siap mendengar ide Anda dan membantu mewujudkannya. Jangan ragu untuk menghubungi kami untuk konsultasi gratis.</p>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <div class="contact-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Alamat:</strong><br>
+                            Jl. Gatot Subroto No. 88, Kuningan, Jakarta Selatan, DKI Jakarta 12950
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong>Telepon:</strong><br>
+                            (021) 2987-1234
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <strong>Email:</strong><br>
+                            info@karyadigitalnusantara.id
+                        </div>
+                    </div>
+                    <div class="map-placeholder">
+                        <a href="https://maps.google.com/?q=Gatot+Subroto+Kuningan+Jakarta+Selatan" target="_blank">Buka di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>Karya Digital Nusantara</h3>
+                <p>Membangun Masa Depan Digital Indonesia.</p>
+            </div>
+            <div>
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#tentang-kami">Tentang Kami</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#portofolio">Portofolio</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="#">Pengembangan Web</a></li>
+                    <li><a href="#">Pengembangan Mobile</a></li>
+                    <li><a href="#">Konsultasi IT</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Ikuti Kami</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 Karya Digital Nusantara. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Portfolio -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="">
+                <h3 id="modalTitle"></h3>
+                <h4>Tantangan</h4>
+                <p id="modalChallenge"></p>
+                <h4>Solusi</h4>
+                <p id="modalSolution"></p>
+                <h4>Hasil</h4>
+                <p id="modalResult"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Mobile Navigation Toggle ---
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // --- FAQ Accordion ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question').classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                    question.classList.add('active');
+                }
+            });
+        });
+
+        // --- Portfolio Modal ---
+        const modal = document.getElementById('portfolioModal');
+
+        function openModal(title, challenge, solution, result) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalChallenge').innerText = challenge;
+            document.getElementById('modalSolution').innerText = solution;
+            document.getElementById('modalResult').innerText = result;
+            // Use a placeholder image for the modal
+            document.getElementById('modalImage').src = `https://placehold.co/700x350/0A2463/FFFFFF?text=${title}`;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // --- Contact Form Submission ---
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simple client-side validation (HTML 'required' attribute already does this)
+            // Here we would normally send data to a server using fetch() or XMLHttpRequest
+            // For this demo, we'll just show a success message.
+
+            alert('Terima kasih! Pesan Anda telah kami terima dan akan segera kami tanggapi.');
+            contactForm.reset(); // Clear the form
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Kynan</title>
+  <style>
+    /* Gaya dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0d1117, #1f2937);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #111827;
+      border-radius: 16px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    p {
+      font-size: 1em;
+      color: #d1d5db;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: scale(1.03);
+    }
+
+    /* Responsif untuk layar kecil */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6em;
+      }
+      p {
+        font-size: 0.95em;
+      }
+      .btn {
+        font-size: 0.95em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Kynan</h1>
+    <p>
+      Halo! Saya Kynan. Saya suka bermain game <strong>Mobile Legends</strong> — hero favorit saya adalah <strong>Wanwan</strong>!  
+      Selain itu, saya juga hobi bermain <strong>badminton</strong>.  
+      Terima kasih sudah mampir ke profil saya!
+    </p>
+
+    <div class="btn-container">
+      <a href="Chatgpt3.html" target="_blank" class="btn">ChatGPT</a>
+      <a href="gemini3.html" target="_blank" class="btn">Gemini</a>
+      <a href="chatz2.html" target="_blank" class="btn">Chatz AI</a>
+      <a href="youAI.html" target="_blank" class="btn">you AI</a>
+      <a href="deepseek.html" target="_blank" class="btn">Deepseek</a>
+      <a href="phind.html" target="_blank" class="btn">Phind</a>
+      <a href="perplexity.html" target="_blank" class="btn">Perplexity</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nexora Digital Solutions — Transforming Ideas into Digital Impact</title>
+  <meta name="description" content="Nexora Digital Solutions — layanan pengembangan platform, cloud & DevOps, dan data analytics untuk startup & UKM di Asia Tenggara." />
+  <meta name="author" content="Nexora Digital Solutions" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nexora Digital Solutions" />
+  <meta property="og:description" content="Transforming Ideas into Digital Impact — Development, Cloud & DevOps, Data Analytics." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --color-primary:#0F172A; /* Midnight Navy */
+      --color-accent:#0EA5A4;  /* Teal */
+      --color-accent-2:#F59E0B; /* Amber */
+      --neutral:#F8FAFC;
+      --text:#0B1220;
+      --radius:12px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; color:var(--text);background:var(--neutral);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{background:linear-gradient(180deg, rgba(15,23,42,0.98), rgba(15,23,42,0.98));color:white;position:sticky;top:0;z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--color-accent),#047C7A);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(2,6,23,0.35)}
+    nav ul{display:flex;gap:18px;align-items:center;list-style:none;margin:0;padding:0}
+    .btn{background:var(--color-accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:8px 12px;border-radius:10px;color:rgba(255,255,255,0.95)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 520px;gap:32px;align-items:center;padding:64px 0}
+    .hero h1{font-size:38px;line-height:1.06;margin:0 0 12px;color:white}
+    .hero p{color:rgba(255,255,255,0.9);margin:0 0 20px}
+    .ctas{display:flex;gap:12px}
+    .card-features{display:flex;gap:14px;margin-top:28px}
+    .feature{background:rgba(255,255,255,0.04);padding:14px;border-radius:10px;min-width:160px}
+    .illus{background:linear-gradient(180deg,#0ea5a47a,#f59e0b33);height:320px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--color-primary);font-weight:700}
+
+    /* Sections */
+    section{padding:54px 0}
+    h2.section-title{font-size:24px;margin:0 0 18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(11,18,32,0.04)}
+
+    /* Portfolio */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project-thumb{height:160px;border-radius:10px;background:linear-gradient(120deg,#e6fdfb,#fff7ea);display:flex;align-items:end;padding:12px;font-weight:700}
+
+    /* Testimonials */
+    .testi{display:flex;gap:12px;align-items:center}
+    .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(180deg,#e6eef8,#dfeffd);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* FAQ */
+    .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .faq-item{background:white;padding:16px;border-radius:10px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #e6eef3;font-size:15px}
+    button[type=submit]{background:var(--color-accent);color:white;border:none;padding:12px;border-radius:10px;font-weight:600}
+
+    footer{background:#071022;color:rgba(255,255,255,0.85);padding:28px 0}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .cards,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      nav ul{display:none}
+      .mobile-toggle{display:inline-block}
+    }
+    @media (max-width:520px){
+      .cards,.portfolio-grid{grid-template-columns:1fr}
+      .hero h1{font-size:26px}
+    }
+
+    /* small helpers */
+    .muted{color:#556270}
+    .kpi{display:flex;gap:8px;align-items:center}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nexora Digital Solutions",
+    "url": "https://example.local/",
+    "logo": "https://example.local/logo.png",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">N</div>
+        <div>
+          <div style="font-weight:700">Nexora</div>
+          <div style="font-size:12px;margin-top:2px;color:rgba(255,255,255,0.7)">Transforming Ideas into Digital Impact</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact" class="btn">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <button class="secondary" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()" style="display:none" id="mobileToggle">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" style="background:var(--color-primary);">
+      <div class="container hero">
+        <div>
+          <h1>We build digital products that scale with your ambition.</h1>
+          <p>Platform development • Cloud migration • Data analytics — end-to-end solutions for startups and SMEs.</p>
+          <div class="ctas">
+            <a class="btn" href="#contact">Request Consultation</a>
+            <a class="secondary" href="#portfolio">Lihat Portofolio</a>
+          </div>
+
+          <div class="card-features" aria-hidden="true">
+            <div class="feature"><strong>End-to-End</strong><div class="muted">Dari konsep ke deployment</div></div>
+            <div class="feature"><strong>Tim Ahli</strong><div class="muted">Engineer & designer berpengalaman</div></div>
+            <div class="feature"><strong>Keamanan</strong><div class="muted">Best practices & compliance</div></div>
+          </div>
+        </div>
+        <div class="illus" role="img" aria-label="Ilustrasi tim bekerja">
+          <div>Ilustrasi Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start">
+          <div class="card">
+            <h3>Visi</h3>
+            <p>Menjadi mitra teknologi terpilih yang mendorong pertumbuhan digital untuk bisnis di Asia Tenggara.</p>
+            <h3>Misi</h3>
+            <ul>
+              <li>Mengarahkan produk digital dengan praktik terbaik UX & engineering.</li>
+              <li>Menyediakan solusi cloud yang aman dan hemat biaya.</li>
+              <li>Membantu klien membuat keputusan berbasis data.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tim Inti</h3>
+            <div style="display:flex;gap:12px;align-items:center">
+              <div style="width:64px;height:64px;border-radius:10px;background:#eef6fb;display:flex;align-items:center;justify-content:center">AR</div>
+              <div>
+                <div style="font-weight:700">Anita Rahma</div>
+                <div class="muted">Co-Founder & CTO</div>
+              </div>
+            </div>
+            <div style="height:12px"></div>
+            <div style="display:flex;gap:12px;align-items:center">
+              <div style="width:64px;height:64px;border-radius:10px;background:#fff7ea;display:flex;align-items:center;justify-content:center">BS</div>
+              <div>
+                <div style="font-weight:700">Budi Santoso</div>
+                <div class="muted">Co-Founder & CEO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" style="background:linear-gradient(180deg,white,#f7fbfb)">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="cards" role="list">
+          <article class="card" role="listitem">
+            <h3>Digital Platform Development</h3>
+            <p class="muted">Pengembangan aplikasi web & mobile custom — dari MVP ke scale.</p>
+            <ul>
+              <li>API-first architecture</li>
+              <li>Testing & CI/CD</li>
+              <li>Accessible & performant UI</li>
+            </ul>
+            <div style="margin-top:12px"><a href="#contact" class="btn">Request Proposal</a></div>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3>Cloud Migration & DevOps</h3>
+            <p class="muted">Migrasi aman ke cloud, automasi, dan deployment pipeline.</p>
+            <ul>
+              <li>Autoscaling & monitoring</li>
+              <li>Infrastructure as Code</li>
+              <li>SLA & runbook</li>
+            </ul>
+            <div style="margin-top:12px"><a href="#contact" class="btn">Schedule Audit</a></div>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3>Data Analytics & BI</h3>
+            <p class="muted">Dashboard real-time & insight untuk pengambilan keputusan.</p>
+            <ul>
+              <li>Data pipelines</li>
+              <li>Custom dashboards</li>
+              <li>KPI tracking</li>
+            </ul>
+            <div style="margin-top:12px"><a href="#contact" class="btn">Request Demo</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio — Selected Projects</h2>
+        <div class="portfolio-grid">
+          <article class="card">
+            <div class="project-thumb">Project Atlas</div>
+            <h4>Project Atlas — Retail Chain</h4>
+            <p class="muted">Challenge: Legacy POS systems; Solution: Cloud migration & API integration; Result: 40% faster sync, 98% less downtime.</p>
+          </article>
+
+          <article class="card">
+            <div class="project-thumb">Project Aurora</div>
+            <h4>Project Aurora — EduTech</h4>
+            <p class="muted">Challenge: Low onboarding; Solution: UX redesign; Result: 3x conversion in 2 months.</p>
+          </article>
+
+          <article class="card">
+            <div class="project-thumb">Project Meridian</div>
+            <h4>Project Meridian — Manufacturing</h4>
+            <p class="muted">Challenge: Data silos; Solution: Real-time dashboard; Result: +12% production efficiency.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" style="background:linear-gradient(180deg,#fff,#f3f9f9)">
+      <div class="container">
+        <h2 class="section-title">Testimonials & Partners</h2>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:260px">
+            <div class="testi">
+              <div class="avatar">AR</div>
+              <div>
+                <strong>Anita Rahma</strong>
+                <div class="muted">CTO, RetailCo</div>
+              </div>
+            </div>
+            <p style="margin-top:12px">"Nexora meningkatkan performa platform kami secara drastis — tim yang cepat dan berpengalaman."</p>
+          </div>
+
+          <div class="card" style="flex:1;min-width:260px">
+            <div class="testi">
+              <div class="avatar">BS</div>
+              <div>
+                <strong>Budi Santoso</strong>
+                <div class="muted">CEO, EduWave</div>
+              </div>
+            </div>
+            <p style="margin-top:12px">"Deliver sesuai jadwal, komunikasi jelas — rekomendasi tinggi."</p>
+          </div>
+
+          <div class="card" style="flex:1;min-width:260px">
+            <div class="testi">
+              <div class="avatar">MP</div>
+              <div>
+                <strong>Maya Putri</strong>
+                <div class="muted">COO, Manufacto</div>
+              </div>
+            </div>
+            <p style="margin-top:12px">"Insight mereka membantu kami scale dengan aman dan efisien."</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <h4>Our Partners</h4>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <div style="padding:8px 12px;background:white;border-radius:8px;box-shadow:0 6px 14px rgba(2,6,23,0.06)">Partner A</div>
+            <div style="padding:8px 12px;background:white;border-radius:8px;box-shadow:0 6px 14px rgba(2,6,23,0.06)">Partner B</div>
+            <div style="padding:8px 12px;background:white;border-radius:8px;box-shadow:0 6px 14px rgba(2,6,23,0.06)">Partner C</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <h2 class="section-title">News / Blog</h2>
+        <div class="card" style="padding:18px">
+          <h3>Case Study: Migrating Legacy POS to Cloud — Lessons Learned</h3>
+          <div class="muted" style="font-size:13px">By Nexora Team • Jul 10, 2025 • 6 min read</div>
+          <p style="margin-top:12px">Ringkasan: Dalam studi kasus ini kami membahas langkah-langkah teknis dan organisasi saat memigrasi sistem POS besar ke cloud, dan insight bagaimana mengurangi downtime saat cutover.</p>
+          <a href="#" class="btn">Read article</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="background:linear-gradient(180deg,#f9fbfd,#ffffff)">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq">
+          <div class="faq-item"><strong>Apa services yang ditawarkan Nexora?</strong><p class="muted">Pengembangan aplikasi, cloud & DevOps, data analytics.</p></div>
+          <div class="faq-item"><strong>Berapa lama proyek berlangsung?</strong><p class="muted">Biasanya 4–16 minggu tergantung scope.</p></div>
+          <div class="faq-item"><strong>Apa model harga?</strong><p class="muted">Fixed-price, retainer, atau hybrid.</p></div>
+          <div class="faq-item"><strong>Apakah ada dukungan purnajual?</strong><p class="muted">Ya, paket support 3–12 bulan tersedia.</p></div>
+          <div class="faq-item"><strong>Bagaimana proses kickoff?</strong><p class="muted">Discovery → Proposal → Sprint planning → Delivery.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-grid">
+          <div>
+            <p class="muted">Isi formulir di bawah untuk request konsultasi. Kami akan menghubungi Anda dalam 1–2 hari kerja.</p>
+            <form id="contactForm" action="/api/contacts" method="post" novalidate onsubmit="return handleSubmit(event)">
+              <label for="name">Nama</label>
+              <input id="name" name="name" type="text" required aria-required="true" />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required aria-required="true" />
+
+              <label for="company">Perusahaan</label>
+              <input id="company" name="company" type="text" />
+
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option>General Inquiry</option>
+                <option>Request Proposal</option>
+                <option>Partnership</option>
+              </select>
+
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+
+              <label style="font-size:13px"><input type="checkbox" id="consent" required /> Saya setuju untuk dihubungi oleh Nexora.</label>
+
+              <button type="submit">Kirim Pesan</button>
+
+              <div id="formFeedback" role="status" aria-live="polite" style="margin-top:8px"></div>
+            </form>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Alamat</h4>
+              <p>Jl. Jend. Gatot Subroto No.88, Jakarta Pusat, Indonesia</p>
+              <h4>Telepon</h4>
+              <p>+62 21 5555 0123</p>
+              <h4>Email</h4>
+              <p>contact@nexora.test</p>
+            </div>
+
+            <div style="margin-top:12px">
+              <iframe src="https://www.google.com/maps?q=Jl.+Jend.+Gatot+Subroto+No+88+Jakarta+Pusat&output=embed" width="100%" height="240" style="border:0;border-radius:8px" loading="lazy" title="Nexora Office Map"></iframe>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        <div style="font-weight:700">Nexora Digital Solutions</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7)">Transforming Ideas into Digital Impact</div>
+      </div>
+      <div class="muted">© 2025 Nexora — All rights reserved</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu(){
+      const btn = document.getElementById('mobileToggle');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      // mobile menu not implemented full — placeholder for future
+      alert('Mobile menu placeholder');
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const feedback = document.getElementById('formFeedback');
+      const data = new FormData(form);
+      // Basic client-side validation
+      if(!data.get('name') || !data.get('email') || !data.get('message')){
+        feedback.textContent = 'Mohon isi semua field yang wajib.';
+        feedback.style.color='crimson';
+        return false;
+      }
+      feedback.textContent = 'Mengirim...';
+      feedback.style.color='inherit';
+
+      // Simulate POST (since no backend in this starter template)
+      setTimeout(()=>{
+        feedback.textContent = 'Terima kasih — pesan Anda telah terkirim. Kami akan menghubungi Anda segera.';
+        feedback.style.color='green';
+        form.reset();
+      },900);
+
+      return false;
+    }
+  </script>
+</body>
+</html>

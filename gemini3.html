@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Kilat | Akselerasi Masa Depanmu</title>
+    <meta name="description" content="E-Kilat: Solusi mobilitas cerdas urban. Sepeda listrik berkualitas tinggi untuk eksekutif muda di Jakarta. Ramah lingkungan, tanpa batas.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Skema Warna E-Kilat */
+        :root {
+            --electric-blue: #007AFF;
+            --lime-green: #8CFF00;
+            --dark-charcoal: #333333;
+            --white: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Reset dan Dasar */
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            color: var(--dark-charcoal);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Utilitas */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .text-center { text-align: center; }
+
+        /* Tombol (CTA) */
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: var(--electric-blue);
+            color: var(--white);
+        }
+        .btn-secondary {
+            background-color: var(--lime-green);
+            color: var(--dark-charcoal);
+        }
+        .btn-primary:hover { background-color: #005bb5; }
+        .btn-secondary:hover { background-color: #79e300; }
+
+        /* Header dan Navigasi */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--electric-blue);
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            padding: 10px 15px;
+            display: block;
+            font-weight: 400;
+        }
+        
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('[Placeholder Image of Urban Runner]') no-repeat center center/cover; /* Ganti dengan gambar/video asli */
+            color: var(--white);
+            text-align: center;
+            z-index: 1;
+        }
+        #hero::before { /* Overlay gelap untuk kontras teks */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .hero-content {
+            max-width: 700px;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Poin Unggulan Section */
+        #unggulan {
+            padding: 80px 0;
+        }
+        .unggulan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            background-color: var(--white);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card i {
+            font-size: 40px;
+            color: var(--lime-green);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            color: var(--electric-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Testimoni & Partners */
+        #social-proof {
+            padding: 60px 0;
+            background-color: #f8f8f8;
+        }
+        .partner-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .partner-logo {
+            max-width: 120px;
+            margin: 20px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .partner-logo:hover { opacity: 1; }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: #ccc;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        footer h4 {
+            color: var(--lime-green);
+            margin-bottom: 15px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* Media Queries untuk Responsif */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            nav ul {
+                padding-top: 10px;
+            }
+            .navbar .btn-secondary {
+                margin-top: 10px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+             .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">E-Kilat</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="products.html">Produk</a></li>
+                    <li><a href="portfolio.html">Portofolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+            <a href="products.html" class="btn btn-secondary">Beli Sekarang</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>E-Kilat: Solusi Mobilitas Cerdas Urban.</h1>
+                <p>Akselerasi Masa Depanmu. Ramah Lingkungan, Tanpa Batas.</p>
+                <a href="products.html" class="btn btn-primary">Coba E-Kilat Hari Ini</a>
+            </div>
+        </section>
+
+        <section id="unggulan" class="container">
+            <h2 class="text-center">Mengapa Memilih E-Kilat?</h2>
+            <div class="unggulan-grid">
+                <div class="feature-card">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>Jangkauan Super</h3>
+                    <p>Baterai Tahan Lama. Lebih dari cukup untuk komuter harian Anda tanpa khawatir.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-motorcycle"></i>
+                    <h3>Desain Ergonomis</h3>
+                    <p>Kenyamanan Maksimal. Didesain untuk efisiensi dan gaya hidup urban modern.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Smart-Tech Integrasi</h3>
+                    <p>Terhubung Aplikasi. Monitor statistik, GPS, dan keamanan langsung dari ponsel Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="social-proof">
+            <div class="container text-center">
+                <h2>Dipercaya oleh Klien Terbaik</h2>
+                
+                <div class="testimonial-carousel">
+                    <p>"E-Kilat Urban Runner mengubah cara saya bepergian. Hemat waktu dan bebas emisi!"</p>
+                    <small>— Bpk. Rudi, Eksekutif Marketing, Tech Startup X</small>
+                </div>
+                
+                <div class="partner-logos">
+                    <img src="[Placeholder Logo Mega Logistics]" alt="Mega Logistics" class="partner-logo">
+                    <img src="[Placeholder Logo Urban Transport Co.]" alt="Urban Transport Co." class="partner-logo">
+                    <img src="[Placeholder Logo Green Energy Fund]" alt="Green Energy Fund" class="partner-logo">
+                    <img src="[Placeholder Logo Finance Corp Z]" alt="Finance Corp Z" class="partner-logo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h4>E-Kilat</h4>
+                <p>Akselerasi Masa Depanmu. Ramah Lingkungan, Tanpa Batas.</p>
+                <p>Hak Cipta &copy; 2024 E-Kilat. All rights reserved.</p>
+            </div>
+            <div>
+                <h4>Navigasi Cepat</h4>
+                <a href="about.html">Tentang Kami</a>
+                <a href="products.html">Produk</a>
+                <a href="portfolio.html">Portofolio</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <div>
+                <h4>Kontak Kami</h4>
+                <p>Jl. Elektrifikasi No. 10, <br>Kawasan Digital City, Jakarta Selatan</p>
+                <p>Email: <a href="mailto:info@ekilat.com">info@ekilat.com</a></p>
+                <p>Telp: <a href="tel:+6221XXXXXX">(021) 5555 1234</a></p>
+            </div>
+            <div>
+                <h4>Ikuti Kami</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contoh fungsionalitas JavaScript minimal
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('E-Kilat Website Loaded.');
+            // Tambahkan fungsionalitas untuk Sticky Header, Carousel, dll. di sini.
+        });
+    </script>
+</body>
+</html>

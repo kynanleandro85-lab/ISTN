@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Innovexa Solutions - Company Profile, Solusi IT Inovatif" />
+  <title>Innovexa Solutions - Innovate Your Future</title>
+  <style>
+    /* Reset & base */
+    body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;
+    }
+    body {
+      background: #ECF0F1; color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #F39C12; text-decoration: none;
+    }
+    header, nav, main, section, footer {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav {
+      background: #0A3D62;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo {
+      font-weight: bold; font-size: 22px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex; gap: 20px;
+    }
+    nav ul li {
+      padding: 5px 0;
+    }
+    nav ul li:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: #0A3D62 url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background: #F39C12;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #d1860c;
+    }
+    section {
+      margin-bottom: 60px;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    h2.section-title {
+      color: #0A3D62;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #F39C12;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    ul.features, ul.testimonials, ul.partner-logos, ul.faq-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    ul.features li, ul.testimonials li, ul.partner-logos li {
+      background: #f9f9f9;
+      border-radius: 6px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 30%;
+    }
+    ul.features li h3, ul.testimonials li h3 {
+      color: #0A3D62;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    ul.faq-list {
+      flex-direction: column;
+    }
+    ul.faq-list li {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    ul.faq-list li:last-child {
+      border-bottom: none;
+    }
+    ul.faq-list li .answer {
+      display: none;
+      padding-top: 10px;
+      color: #555;
+    }
+    .portfolio-item {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fefefe;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+    }
+    .portfolio-item-content {
+      padding: 15px;
+    }
+    form {
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #F39C12;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    form button:hover {
+      background: #d1860c;
+    }
+    footer {
+      text-align: center;
+      color: #bbb;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    /* Responsive */
+    @media(max-width: 900px) {
+      ul.features, ul.testimonials, ul.partner-logos {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Innovexa Solutions</div>
+    <ul>
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang Kami</a></li>
+      <li><a href="#services">Layanan</a></li>
+      <li><a href="#portfolio">Portofolio</a></li>
+      <li><a href="#contact">Hubungi Kami</a></li>
+      <li><a href="#testimonials">Testimoni</a></li>
+      <li><a href="#blog">Berita</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Innovate Your Future</h1>
+      <p>Solusi IT Inovatif dan Terpercaya untuk Bisnis Anda</p>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hubungi Kami untuk Konsultasi Gratis</button>
+      <ul class="features" style="margin-top:40px; display:flex; justify-content:center;">
+        <li>
+          <h3>Solusi IT Kustom</h3>
+          <p>Solusi perangkat lunak yang disesuaikan dengan kebutuhan bisnis anda.</p>
+        </li>
+        <li>
+          <h3>Tim Ahli Berpengalaman</h3>
+          <p>Didukung oleh tim profesional dengan pengalaman luas di bidang teknologi.</p>
+        </li>
+        <li>
+          <h3>Dukungan 24/7</h3>
+          <p>Layanan dukungan teknis siap membantu kapan saja Anda butuhkan.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">Tentang Kami</h2>
+      <p><strong>Visi:</strong> Mendorong transformasi digital dengan solusi teknologi terbaik.</p>
+      <p><strong>Misi:</strong> Memberikan layanan IT terpercaya dan inovatif yang mengedepankan kebutuhan klien.</p>
+      <p><strong>Nilai Inti:</strong> Inovasi, Integritas, Kolaborasi, dan Kepuasan Pelanggan.</p>
+      <h3>Tim Kami</h3>
+      <ul style="display:flex; gap: 20px; flex-wrap: wrap; list-style:none;">
+        <li style="flex:1 1 25%; text-align:center;">
+          <img src="https://via.placeholder.com/120" alt="Foto Tim 1" style="border-radius: 50%;" />
+          <p><strong>Alice Tan</strong><br>CEO & Founder</p>
+        </li>
+        <li style="flex:1 1 25%; text-align:center;">
+          <img src="https://via.placeholder.com/120" alt="Foto Tim 2" style="border-radius: 50%;" />
+          <p><strong>Budi Santoso</strong><br>CTO</p>
+        </li>
+        <li style="flex:1 1 25%; text-align:center;">
+          <img src="https://via.placeholder.com/120" alt="Foto Tim 3" style="border-radius: 50%;" />
+          <p><strong>Clara Wijaya</strong><br>Head of Marketing</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title">Layanan Kami</h2>
+      <ul class="features">
+        <li>
+          <h3>Pengembangan Perangkat Lunak Kustom</h3>
+          <p>Solusi perangkat lunak disesuaikan dengan kebutuhan spesifik bisnis Anda untuk meningkatkan efisiensi dan produktivitas.</p>
+        </li>
+        <li>
+          <h3>Konsultasi Transformasi Digital</h3>
+          <p>Strategi digital untuk mempercepat pertumbuhan dan meningkatkan daya saing bisnis Anda.</p>
+        </li>
+        <li>
+          <h3>Dukungan dan Pemeliharaan IT 24/7</h3>
+          <p>Layanan support lengkap untuk menjaga sistem bisnis Anda tetap berjalan lancar kapan saja.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="portfolio">
+      <h2 class="section-title">Portofolio</h2>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/600x300?text=Proyek+ERP+E-Commerce" alt="Proyek ERP" />
+        <div class="portfolio-item-content">
+          <h3>Implementasi ERP untuk Startup E-Commerce</h3>
+          <p><strong>Tantangan:</strong> Integrasi sistem yang efisien dan mudah digunakan.</p>
+          <p><strong>Solusi:</strong> Sistem ERP custom dengan dashboard yang intuitif.</p>
+          <p><strong>Hasil:</strong> Pengurangan waktu proses operasional hingga 40%.</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/600x300?text=Transformasi+Retail" alt="Transformasi Retail" />
+        <div class="portfolio-item-content">
+          <h3>Transformasi Digital Perusahaan Retail</h3>
+          <p><strong>Tantangan:</strong> Kurangnya automasi dalam manajemen inventori.</p>
+          <p><strong>Solusi:</strong> Aplikasi mobile dan sistem manajemen inventori otomatis.</p>
+          <p><strong>Hasil:</strong> Peningkatan akurasi stok dan pengurangan kesalahan manual.</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/600x300?text=Aplikasi+Mobile+Kesehatan" alt="Aplikasi Kesehatan" />
+        <div class="portfolio-item-content">
+          <h3>Pengembangan Aplikasi Mobile untuk Layanan Kesehatan</h3>
+          <p><strong>Tantangan:</strong> Membuat akses layanan kesehatan lebih mudah dan cepat.</p>
+          <p><strong>Solusi:</strong> Aplikasi mobile terintegrasi dengan sistem rumah sakit.</p>
+          <p><strong>Hasil:</strong> Peningkatan jumlah pengguna aktif bulanan sebanyak 30%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Hubungi Kami</h2>
+      <form id="contact-form" onsubmit="return submitForm(event)">
+        <input type="text" id="name" name="name" placeholder="Nama Lengkap" required />
+        <input type="email" id="email" name="email" placeholder="Email" required />
+        <input type="text" id="subject" name="subject" placeholder="Subjek" required />
+        <textarea id="message" name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+      <p style="margin-top: 20px;"><strong>Alamat:</strong> Jl. Innovasi No.123, Kawasan Teknologi, Jakarta</p>
+      <div style="width: 100%; height: 300px; margin-top: 20px;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890123!2d106.7964!3d-6.200000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f24b64c0f6b7%3A0xaa2b5ff055e53334!2sJl.+Innovasi+No.123%2C+Jakarta!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid" 
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2 class="section-title">Testimoni Klien</h2>
+      <ul class="testimonials">
+        <li>
+          <h3>Asep Wijaya</h3>
+          <p>"Innovexa memberikan solusi IT yang sangat membantu perkembangan bisnis kami. Timnya responsif dan sangat profesional."</p>
+        </li>
+        <li>
+          <h3>Rina Putri</h3>
+          <p>"Pelayanan 24/7 mereka sangat memuaskan. Sistem yang dibuat sangat sesuai dengan kebutuhan kami."</p>
+        </li>
+        <li>
+          <h3>Bambang Sutanto</h3>
+          <p>"Kolaborasi dengan Innovexa membuat proses digitalisasi perusahaan kami berjalan lancar dan efisien."</p>
+        </li>
+      </ul>
+      <h3>Partner Kami</h3>
+      <ul class="partner-logos" style="justify-content: center;">
+        <li><img src="https://via.placeholder.com/120x60?text=TechPartners" alt="TechPartners"></li>
+        <li><img src="https://via.placeholder.com/120x60?text=DigitalConnect" alt="DigitalConnect"></li>
+        <li><img src="https://via.placeholder.com/120x60?text=FutureCorp" alt="FutureCorp"></li>
+      </ul>
+    </section>
+
+    <section id="blog">
+      <h2 class="section-title">Berita & Blog</h2>
+      <article style="background:#f9f9f9; padding: 20px; border-radius: 8px;">
+        <h3>Innovexa Solutions Menjadi Pemimpin Inovasi IT di Jakarta</h3>
+        <p><small>Dipublikasikan 10 November 2025</small></p>
+        <p>Innovexa Solutions terus berkomitmen untuk menjadi pelopor dalam inovasi teknologi di Jakarta, dengan berbagai proyek sukses yang berdampak positif pada industri lokal...</p>
+        <a href="#">Baca Selengkapnya &raquo;</a>
+      </article>
+    </section>
+
+    <section id="faq">
+      <h2 class="section-title">FAQ</h2>
+      <ul class="faq-list">
+        <li onclick="toggleAnswer(this)">
+          <strong>Apa layanan utama Innovexa Solutions?</strong>
+          <div class="answer">Pengembangan perangkat lunak kustom, konsultasi transformasi digital, dan dukungan IT 24/7.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">
+          <strong>Bagaimana proses konsultasi bisa dimulai?</strong>
+          <div class="answer">Anda dapat mengisi formulir kontak pada halaman Hubungi Kami atau langsung menghubungi nomor kami.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">
+          <strong>Apakah layanan termasuk dukungan teknis 24/7?</strong>
+          <div class="answer">Ya, kami menyediakan layanan dukungan teknis 24/7 untuk semua klien kami.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">
+          <strong>Berapa lama durasi pengerjaan proyek rata-rata?</strong>
+          <div class="answer">Rata-rata durasi pengerjaan proyek adalah 3-6 bulan, tergantung kerumitan dan skala proyek.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">
+          <strong>Bagaimana cara menghubungi tim support?</strong>
+          <div class="answer">Anda dapat menghubungi kami melalui formulir kontak, telepon, atau email yang tercantum di halaman Hubungi Kami.</div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Innovexa Solutions. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    function toggleAnswer(el) {
+      const answer = el.querySelector('.answer');
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+      } else {
+        answer.style.display = 'block';
+      }
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      // Basic form validation done by 'required' attributes, so just simulate success
+      alert('Terima kasih telah menghubungi kami! Pesan Anda telah diterima.');
+      document.getElementById('contact-form').reset();
+      return false;
+    }
+  </script>
+
+</body>
+</html>
